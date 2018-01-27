@@ -1,0 +1,33 @@
+
+
+Models.py- Contains information about database. Each Class acts as Row and attributes acts as Columns.
+
+Whenever You want to edit database remember three steps:-
+
+1-Make changes whatever you want to make in models.py
+2-open terminal type-  python manage.py makemigrations
+                       python manage.py sqlmigrate nameofapp id(music 0001)
+3- type- python manage.py migrate (To Commit your changes) 	
+
+
+InCommand Prompt:-
+
+python manage.py shell
+
+>>from music.models import Album,Song
+>>Album.object.all()
+
+ TO FILTER
+eg-
+ >> Album.objects.filter(id=1)
+ >> Album.objects.filter(artist__startswith='Taylor')
+
+->TO CREATE SUPERUSER
+python manage.py createsuperuser
+
+->To Show Class in admin section goto admin.py file and 
+
+from .models import Album
+admin.site.register(Album)
+
+
